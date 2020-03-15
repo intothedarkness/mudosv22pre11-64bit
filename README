@@ -1,0 +1,41 @@
+MUD-OS is the LPMud driver designed for Chinese LPMud XiYouJi, this is forked from MUD-OS-V22.2 and modified by
+Rocky@XYJ-CN  Feb 2015
+QQ - 751534
+----------------------------------------------------------------------------
+Build Instruction under Ubuntu 12.04 TLS 64bit:
+
+a) install the following libraries / compilers for environment support:
+	- sudo apt-get install -qq bison
+	- sudo apt-get install valgrind
+	- sudo apt-get install libevent-dev libmysqlclient-dev libsqlite3-dev libpq-dev libz-dev libssl-dev libpcre3-dev
+
+b). start to build
+	- unzip the OS package to a directory.
+	- ./Build.MUD-OS
+
+c). Binaries will be generated under /bin directory
+
+Enjoy !
+
+----------------------------------------------------------------------------
+Change logs:
+
+2/13. v1.00
+Add support for 64bit big number, data would never overflow again.
+
+2/14. v1.01 
+Remove a lot of type check to compatible with the old Mudlib.
+
+2/19. v1.02
+Fix a algorithm error in interpret.c.
+
+2/22. v1.03
+1). fix the ed.c on Chinese characters.
+2). fix the add_action error in add_acction.c.
+
+3/2. v1.04
+Change the SYSMALLOC to BSDMALLOC for better performance.
+
+4/7 v1.05
+1). Change the stack size to compromise the GB2BIG5 conversion
+2). Add append mode for debug.log in main.c - void debug_message()
